@@ -22,13 +22,17 @@ public class EnterpriseNameSuffixService implements InitializingBean {
 
     @Override
     public void afterPropertiesSet() throws Exception {
+    
+        //获取当前记录计数
         long currentSuffix = getCurrentSuffix();
+        //添加到当前计数器
         atomicLong.set(currentSuffix);
 
         //重启服务后，更新后缀，防止服务在 SUFFIX_SPAN_SIZE 内被重启
         updateEnterpriseNameSuffix(currentSuffix + SUFFIX_SPAN_SIZE);
     }
 
+    //获取下一个计数后缀
     public String getNextSuffix() {
 
         long counterSuffix = atomicLong.getAndIncrement();
@@ -41,6 +45,7 @@ public class EnterpriseNameSuffixService implements InitializingBean {
         return numberFormat.format(atomicLong.get());
     }
 
+    //从数据库中获取当前记录计数
     private long getCurrentSuffix() {
 
         Sort sort = new Sort("create_time", "desc");
