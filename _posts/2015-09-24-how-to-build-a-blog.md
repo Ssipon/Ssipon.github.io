@@ -20,3 +20,5 @@ description: 这是一篇很详尽的独立博客搭建教程，里面介绍了�
 8. 回到"https://github.com/你的用户名/你的用户名.github.io"找到"CNAME"文件,将"ssipon.github.io"改成你的域名,你的域名就拥有我的博客了
 9. 博客的文字都放在"https://github.com/你的用户名/你的用户名.github.io"中的"post"里面,你可以将按照里面文章模板去修改,其他的细节自己摸索一下
 10. 极简博客教程完成.
+
+## [Cmd Markdown 编辑器使用](https://www.zybuluo.com/mdeditor)
